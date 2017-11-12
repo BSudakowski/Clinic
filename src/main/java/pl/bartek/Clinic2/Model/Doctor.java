@@ -27,13 +27,13 @@ public class Doctor implements Serializable {
         this.surname = surname;
         this.specialization = specialization;
     }
-//    public List<Visit> getVisits(){
-//        return visits ;
-//    }
-//
-//    public void setVisits(List<Visit> visits){
-//        this.visits=visits;
-//    }
+    public List<Visit> getVisits(){
+        return visits ;
+    }
+
+    public void setVisits(List<Visit> visits){
+        this.visits=visits;
+    }
 
     public Long getId() {
         return Id;
@@ -67,25 +67,9 @@ public class Doctor implements Serializable {
         this.specialization = specialization;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Doctor{" +
-//                "Id=" + Id +
-//                ", name='" + name + '\'' +
-//                ", surname='" + surname + '\'' +
-//                ", specialization='" + specialization + '\'' +
-//                ", visits=" + visits +
-//                '}';
-//    }
-
     @Override
     public String toString() {
-        return "Doctor{" +
-                "Id=" + Id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", specialization='" + specialization + '\'' +
-                '}';
+        return Id + " " + name + " " + surname + " - " + specialization;
     }
 }
 

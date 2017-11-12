@@ -11,10 +11,10 @@
 <label>wybierz date : </label><input id="date" name="date" type="date" value="2017-11-12"/>
 <label>Wybierz godzinę : </label><input id="time" name="time" type="time" value="12:00"/>
     <select id="doctor" name="doctor">
-        <option th:each="d : ${doctors}" th:value="${d.id}" th:text="${d}"></option>
+        <option th:each="d : ${doctor}" th:value="${d.id}" th:text="${d}"></option>
     </select>
     <select id="patient" name="patient">
-        <option th:each="p : ${patients}" th:value="${p.id}" th:text="${p}"></option>
+        <option th:each="p : ${patient}" th:value="${p.id}" th:text="${p}"></option>
     </select>
     <input type="submit">
 </form>

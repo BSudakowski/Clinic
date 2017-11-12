@@ -16,15 +16,9 @@ import java.util.List;
         private String surname;
         private String email;
 
-//    @OneToMany(fetch = FetchType.EAGER,mappedBy = "patient")
-//    private List<Patient> patients;
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "patient")
+    private List<Visit> visits;
 
-//    public Patient(String name, String surname, String email, List<Patient> patients) {
-//        this.name = name;
-//        this.surname = surname;
-//        this.email = email;
-//        this.patients = patients;
-//    }
 
 
     public Patient() {
@@ -36,15 +30,15 @@ import java.util.List;
             this.email = email;
         }
 
-//    public List<Patient> getPatients(){
-//        return patients ;
-//    }
-//
-//    public void setPatients(List<Patient> patients){
-//        this.patients=patients;
-//    }
+    public List<Visit> getVisits() {
+        return visits;
+    }
 
-        public Patient(String name) {
+    public void setVisits(List<Visit> visits) {
+        this.visits = visits;
+    }
+
+    public Patient(String name) {
             this.name = name;
         }
 
@@ -80,25 +74,8 @@ import java.util.List;
             this.email = email;
         }
 
-//    @Override
-//    public String toString() {
-//        return "Patient{" +
-//                "id=" + id +
-//                ", name='" + name + '\'' +
-//                ", surname='" + surname + '\'' +
-//                ", email='" + email + '\'' +
-//                ", patients=" + patients +
-////                '}';
-//    }
-
-
     @Override
     public String toString() {
-        return "Patient{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return id + ". " + name + " " + surname + " - " + email;
     }
 }

@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import pl.bartek.Clinic2.Model.Doctor;
 import pl.bartek.Clinic2.Model.Patient;
-//import pl.bartek.Clinic2.Model.Visit;
+import pl.bartek.Clinic2.Model.Visit;
 import pl.bartek.Clinic2.Repository.DoctorRepository;
 import pl.bartek.Clinic2.Repository.PatientRepository;
-//import pl.bartek.Clinic2.Repository.VisitRepository;
+import pl.bartek.Clinic2.Repository.VisitRepository;
 
 import javax.print.Doc;
 import java.sql.Time;
@@ -29,8 +29,8 @@ public class MainController {
     @Autowired
     private DoctorRepository doctorRepository;
 
-//    @Autowired
-//    private VisitRepository visitRepository;
+    @Autowired
+    private VisitRepository visitRepository;
 
     @GetMapping("/")
     public String Index() {
@@ -80,7 +80,9 @@ public class MainController {
     }
 
     @GetMapping("/addvisit")
-    public String addvisit() {
+    public String addvisit(ModelMap modelMap) {
+        modelMap.put("doctor", doctorRepository.findAll());
+        modelMap.put("patient", patientRepository.findAll());
         return "addvisit";
     }
 
