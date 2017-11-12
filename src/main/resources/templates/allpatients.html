@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>allPatient</title>
+</head>
+<body>
+
+<div><h2>Wszyscy pacjenci</h2></div>
+
+<table border="1px">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+    </tr>
+
+    <th:block th:each="patient: ${patients}">
+
+        <tr>
+            <td th:text="${patient.getId()}"></td>
+            <td th:text="${patient.getName()}"></td>
+            <td th:text="${patient.getSurname()}"></td>
+            <td th:text="${patient.getEmail()}"></td>
+        </tr>
+    </th:block>
+</table>
+
+</body>
+</html>

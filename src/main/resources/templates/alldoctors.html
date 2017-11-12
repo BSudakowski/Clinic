@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>AllDoctors</title>
+</head>
+<body>
+
+<div><h2>Wszyscy lekarze</h2></div>
+
+<table border="1px">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Specialization</th>
+    </tr>
+
+    <th:block th:each="doctor: ${doctors}">
+
+        <tr>
+            <td th:text="${doctor.getId()}"></td>
+            <td th:text="${doctor.getName()}"></td>
+            <td th:text="${doctor.getSurname()}"></td>
+            <td th:text="${doctor.getSpecialization()}"></td>
+        </tr>
+    </th:block>
+</table>
+
+</body>
+</html>

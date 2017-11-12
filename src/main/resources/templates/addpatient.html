@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>addPatient</title>
+</head>
+<body>
+
+    <h1> Wypełnij formularz</h1>
+
+    <form action="/add" method="get">
+        <p th:text="${addMessage}"></p>
+
+
+        <p><input type="text" name="name" autofocus value="imie"></p>
+        <p><input type="text" name="surname" value="nazwisko"></p>
+        <p><input type="text" name="email" value="email"></p>
+        <p><input type="submit" value="Dodaj"></p>
+    </form>
+
+
+    <a href="addvisit.html"><label>Dodaj wizytę</label></a>
+    <a href="patient.html"><label>Cofnij</label></a>
+
+</body>
+</html>
