@@ -6,6 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import java.sql.Time;
 import java.util.Date;
+
+
 @Entity
 public class Visit {
     @Id
