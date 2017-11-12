@@ -13,7 +13,7 @@ public class Visit {
     @Id
     @GeneratedValue
     private Long id;
-    private Date date;
+    private String date;
     private Time time;
     @OneToOne
     private Patient patient;
@@ -23,7 +23,11 @@ public class Visit {
     public Visit() {
     }
 
-    public Visit(Date date, Time time, Patient patient, Doctor doctor) {
+    public Visit(String date) {
+        this.date = date;
+    }
+
+    public Visit(String date, Time time, Patient patient, Doctor doctor) {
         this.date = date;
         this.time = time;
         this.patient = patient;
@@ -34,15 +38,16 @@ public class Visit {
         return id;
     }
 
+
     public void setId(Long id) {
         this.id = id;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

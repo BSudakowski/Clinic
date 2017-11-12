@@ -70,7 +70,7 @@ public class MainController {
         d.setSpecialization(specialization);
         d.setSurname(surname);
         doctorRepository.save(d);
-        modelMap.addAttribute("addMessage", "Pomyślnie dodano pacjęta");
+        modelMap.addAttribute("addMessage", "Pomyślnie dodano doktora");
         return "adddoctor";
     }
 
@@ -79,8 +79,11 @@ public class MainController {
         return "adddoctor";
     }
 
-    @GetMapping("/addvisit")
-    public String addvisit(ModelMap modelMap) {
+    @GetMapping("/addvis")
+    public String addvisit(@RequestParam String date,  ModelMap modelMap) {
+        Visit v = new Visit();
+        v.setDate(date);
+        visitRepository.save(v);
         modelMap.put("doctor", doctorRepository.findAll());
         modelMap.put("patient", patientRepository.findAll());
         return "addvisit";
