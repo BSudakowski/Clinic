@@ -89,8 +89,6 @@ public class MainController {
         return "alldoctors";
     }
 
-    @GetMapping("/alldoctors")
-    public String alldoc2(){
-        return "alldocs";
-    }
+
+
 }

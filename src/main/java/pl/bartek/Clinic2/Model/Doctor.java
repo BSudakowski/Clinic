@@ -1,14 +1,18 @@
 package pl.bartek.Clinic2.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
-public class Doctor {
+public class Doctor implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+
+//    @OneToMany(fetch = FetchType.EAGER,mappedBy = "doctor")
+//    private List<Visit> visits;
+
 
     private Long Id;
     private String name;
@@ -23,6 +27,13 @@ public class Doctor {
         this.surname = surname;
         this.specialization = specialization;
     }
+//    public List<Visit> getBooks(){
+//        return visits ;
+//    }
+//
+//    public void setBooks(List<Visit> books){
+//        this.visits=visits;
+//    }
 
     public Long getId() {
         return Id;
