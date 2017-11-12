@@ -10,8 +10,8 @@ public class Doctor implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
 
-//    @OneToMany(fetch = FetchType.EAGER,mappedBy = "doctor")
-//    private List<Visit> visits;
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "doctor")
+    private List<Visit> visits;
 
 
     private Long Id;
@@ -27,13 +27,13 @@ public class Doctor implements Serializable {
         this.surname = surname;
         this.specialization = specialization;
     }
-//    public List<Visit> getBooks(){
-//        return visits ;
-//    }
-//
-//    public void setBooks(List<Visit> books){
-//        this.visits=visits;
-//    }
+    public List<Visit> getVisits(){
+        return visits ;
+    }
+
+    public void setVisits(List<Visit> visits){
+        this.visits=visits;
+    }
 
     public Long getId() {
         return Id;
