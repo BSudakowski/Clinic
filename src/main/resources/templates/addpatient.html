@@ -2,22 +2,27 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>addPatient</title>
 </head>
 <body>
 
+<header>
     <h1> Wypełnij formularz</h1>
+</header>
+<br>
 
+<main>
     <form action="/add" method="get">
-        <p th:text="${addMessage}"></p>
+        <div th:text="${addMessage}"></div>
 
 
-        <p><input type="text" name="name" autofocus value="imie"></p>
-        <p><input type="text" name="surname" value="nazwisko"></p>
-        <p><input type="text" name="email" value="email"></p>
+        <p><label for="name">Name: </label><input type="text" id="name" name="name" autofocus></p>
+        <p><label for="surname">Surname: </label><input type="text" name="surname" id="surname"></p>
+        <p><label for="email">Email: </label><input type="text" name="email" id="email"></p>
         <p><input type="submit" value="Dodaj"></p>
     </form>
-
+</main>
 
     <a href="addvisit.html"><label>Dodaj wizytę</label></a>
     <a href="patient.html"><label>Cofnij</label></a>
