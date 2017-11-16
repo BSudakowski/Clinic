@@ -8,16 +8,37 @@
 </head>
 <body>
 
-<h1>Wprowadź dane doktora</h1>
+<header>
+    <h1>Wprowadź dane doktora</h1>
+</header>
 
-<form action="/adddoc" method="get">
-    <p th:text="${addMessage}"></p>
+<main>
+    <form action="/adddoc" method="get">
+        <div th:text="${addMessage}"></div>
 
-    <p><input type="text" name="name" autofocus value="imie"></p>
-    <p><input type="text" name="surname" value="nazwisko"></p>
-    <p><input type="text" name="specialization" value="specializacja"></p>
-    <p><input type="submit" value="Dodaj"></p>
-</form>
+        <div>
+            <label>Imię : </label>
+            <input type="text" name="name" autofocus placeholder="Imię...">
+        </div>
+
+        <div>
+            <label>Nazwisko : </label>
+            <input type="text" name="surname"  placeholder="Nazwisko...">
+        </div>
+
+        <div>
+            <label>Specjalizacja : </label>
+            <input type="text" name="specialization"  placeholder="Specjalizacja...">
+        </div>
+
+        <div><input type="submit" value="Dodaj"></div>
+
+    </form>
+</main>
+
+<a href="doctor.html"><h5>Wróć</h5></a>
+
+<div th:insert="~{fragments/footer :: footer}">...</div>
 
 </body>
 </html>

@@ -8,9 +8,11 @@
 </head>
 <body>
 
-<div><h2>Wszyscy lekarze</h2></div>
+<header>
+    <h1>Wszyscy lekarze</h1>
+</header>
 
-<table border="1px">
+<table>
     <tr>
         <th>ID</th>
         <th>Name</th>
@@ -28,6 +30,10 @@
         </tr>
     </th:block>
 </table>
+
+<a href="patient.html"><h5>Wróć</h5></a>
+
+<div th:insert="~{fragments/footer :: footer}">...</div>
 
 </body>
 </html>

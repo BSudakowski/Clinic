@@ -79,28 +79,22 @@ public class MainController {
         return "adddoctor";
     }
 
-//    @GetMapping("/addvis")
-//    public String addvisit(ModelMap modelMap, Visit visit) {
-//        modelMap.put("doctor", doctorRepository.findAll());
-//        modelMap.put("patient", patientRepository.findAll());
-//        modelMap.put("date", visit.getDate());
-//        modelMap.put("time", visit.getTime());
-//        return "addvisit";
-//    }
 
     @GetMapping("/addvis")
-    public String addvisit(@RequestParam String date, @RequestParam String time, @RequestParam Doctor doctor, @RequestParam Patient patient ){
+    public String addvisit(@RequestParam String date, @RequestParam String time, @RequestParam Doctor doctor, @RequestParam Patient patient, ModelMap modelMap
+    ) {
         Visit visit = new Visit();
         visit.setDate(date);
         visit.setTime(time);
         visit.setDoctor(doctor);
         visit.setPatient(patient);
         visitRepository.save(visit);
+        modelMap.addAttribute("addMessage", "Pomyślnie dodano wizytę");
         return "addvisit";
     }
 
     @GetMapping("/addvisit")
-    public String addvisitmain(ModelMap modelMap){
+    public String addvisitmain(ModelMap modelMap) {
         modelMap.put("doctor", doctorRepository.findAll());
         modelMap.put("patient", patientRepository.findAll());
         return "addvisit";
@@ -123,7 +117,7 @@ public class MainController {
     }
 
     @GetMapping("/allvisit")
-    public String allvisit(ModelMap modelMap){
+    public String allvisit(ModelMap modelMap) {
         List<Visit> visits = new ArrayList<>();
         visitRepository.findAll().forEach(v -> visits.add(v));
         modelMap.addAttribute("visits", visits);

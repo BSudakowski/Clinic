@@ -2,27 +2,51 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <title>addVisit</title>
 </head>
 <body>
+
+<header>
 <h1>Dodaj wizytę</h1>
+</header>
 
-<form action="/addvisit" method="get">
+<main class="visit">
+    <form action="/addvisit" method="get">
+        <div th:text="${addMessage}"></div>
 
-    <div><label>wybierz date : <input type="date" name="date"  value="2017-11-12"/></label></div>
-    <div> <label>Wybierz godzinę : <input type="time" name="time"  value="12:00"/></label></div>
+    <div>
+        <label>Wybierz date : </label>
+        <input type="date" name="date"  value="2017-11-12"/>
+    </div>
 
-    <div> <select id="doctor" name="doctor">
+    <div>
+        <label>Wybierz godzinę : </label>
+        <input type="time" name="time"  value="12:00"/>
+    </div>
+
+    <div>
+        <label>Wybierz doktora : </label>
+        <select id="doctor" name="doctor">
              <option th:each="d : ${doctor}" th:value="${d.id}" th:text="${d}"></option>
-    </select></div>
-        <div><select id="patient" name="patient">
+    </select>
+    </div>
+    <div>
+        <label>Wybierz pacjęta : </label>
+        <select id="patient" name="patient">
             <option th:each="p : ${patient}" th:value="${p.id}" th:text="${p}"></option>
-     </select></div>
-
+     </select>
+    </div>
+    <br>
     <div><input type="submit"></div>
 
 </form>
+</main>
+
+<a href="patient.html"><h5>Wróć</h5></a>
+
+<div th:insert="~{fragments/footer :: footer}">...</div>
+
 </body>
 </html>
