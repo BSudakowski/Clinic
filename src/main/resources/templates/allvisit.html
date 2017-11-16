@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>AllVisit</title>
 </head>
 <body>
@@ -21,8 +22,8 @@
         <tr>
             <td th:text="${visit.getDate()}"></td>
             <td th:text="${visit.getTime()}"></td>
-            <!--<td th:text="${patient.getSurname()}"></td>-->
-            <!--<td th:text="${patient.getEmail()}"></td>-->
+            <td th:text="${visit.getPatient()}"></td>
+            <td th:text="${visit.getDoctor()}"></td>
         </tr>
     </th:block>
 </table>

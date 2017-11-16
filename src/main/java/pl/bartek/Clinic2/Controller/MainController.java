@@ -89,10 +89,12 @@ public class MainController {
 //    }
 
     @GetMapping("/addvis")
-    public String addvisit(@RequestParam String date, @RequestParam String time){
+    public String addvisit(@RequestParam String date, @RequestParam String time, @RequestParam Doctor doctor, @RequestParam Patient patient ){
         Visit visit = new Visit();
         visit.setDate(date);
         visit.setTime(time);
+        visit.setDoctor(doctor);
+        visit.setPatient(patient);
         visitRepository.save(visit);
         return "addvisit";
     }
