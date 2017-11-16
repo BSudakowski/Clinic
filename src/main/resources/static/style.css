@@ -17,6 +17,14 @@ body{
     background-color: darkslategray;
 }
 
+img{
+ height: 220px;
+    width: 650px;
+    border-radius: 15px;
+        margin-right: auto;
+        margin-left: auto;
+}
+
 div{
     border-radius: 15px;
     margin-right: auto;
@@ -24,15 +32,13 @@ div{
 }
 
 .strefapacjeta{
-background-image: url("http://pliki.rynekaptek.pl/i/00/36/90/003690_r0_620.jpg");
 text-align: center;
     align-items: center;
-    height: 220px;
-    width: 650px;
+
 }
 
 .strefalekarza{
-    background-image: url("http://static.wirtualnemedia.pl/media/top/lekarzelogo655.jpg");
+    background-image: url("/1.png");
     align-content: center;
     text-align: center;
     height: 220px;
