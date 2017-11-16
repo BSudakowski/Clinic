@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import pl.bartek.Clinic2.Model.Doctor;
 import pl.bartek.Clinic2.Model.Patient;
-//import pl.bartek.Clinic2.Model.Visit;
+import pl.bartek.Clinic2.Model.Visit;
 import pl.bartek.Clinic2.Repository.DoctorRepository;
 import pl.bartek.Clinic2.Repository.PatientRepository;
-//import pl.bartek.Clinic2.Repository.VisitRepository;
+import pl.bartek.Clinic2.Repository.VisitRepository;
 
 import javax.print.Doc;
 import java.sql.Time;
@@ -28,6 +28,9 @@ public class MainController {
 
     @Autowired
     private DoctorRepository doctorRepository;
+
+    @Autowired
+    private VisitRepository visitRepository;
 
     @GetMapping("/")
     public String Index() {
@@ -76,8 +79,26 @@ public class MainController {
         return "adddoctor";
     }
 
+//    @GetMapping("/addvis")
+//    public String addvisit(ModelMap modelMap, Visit visit) {
+//        modelMap.put("doctor", doctorRepository.findAll());
+//        modelMap.put("patient", patientRepository.findAll());
+//        modelMap.put("date", visit.getDate());
+//        modelMap.put("time", visit.getTime());
+//        return "addvisit";
+//    }
+
     @GetMapping("/addvis")
-    public String addvisit(ModelMap modelMap) {
+    public String addvisit(@RequestParam String date, @RequestParam String time){
+        Visit visit = new Visit();
+        visit.setDate(date);
+        visit.setTime(time);
+        visitRepository.save(visit);
+        return "addvisit";
+    }
+
+    @GetMapping("/addvisit")
+    public String addvisitmain(ModelMap modelMap){
         modelMap.put("doctor", doctorRepository.findAll());
         modelMap.put("patient", patientRepository.findAll());
         return "addvisit";
@@ -97,6 +118,14 @@ public class MainController {
         doctorRepository.findAll().forEach(d -> doctors.add(d));
         modelMap.addAttribute("doctors", doctors);
         return "alldoctors";
+    }
+
+    @GetMapping("/allvisit")
+    public String allvisit(ModelMap modelMap){
+        List<Visit> visits = new ArrayList<>();
+        visitRepository.findAll().forEach(v -> visits.add(v));
+        modelMap.addAttribute("visits", visits);
+        return "allvisit";
     }
 
 }

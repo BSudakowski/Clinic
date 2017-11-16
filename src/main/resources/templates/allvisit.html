@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>AllVisit</title>
 </head>
 <body>
+
+<div><h2>Wszystkie wizyty</h2></div>
+
+<table border="1px">
+    <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Patient</th>
+        <th>Doctor</th>
+    </tr>
+
+    <th:block th:each="visit: ${visits}">
+
+        <tr>
+            <td th:text="${visit.getDate()}"></td>
+            <td th:text="${visit.getTime()}"></td>
+            <!--<td th:text="${patient.getSurname()}"></td>-->
+            <!--<td th:text="${patient.getEmail()}"></td>-->
+        </tr>
+    </th:block>
+</table>
 
 </body>
 </html>
