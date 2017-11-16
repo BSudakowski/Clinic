@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <title>addPatient</title>
 </head>
 <body>
@@ -17,15 +18,15 @@
         <div th:text="${addMessage}"></div>
 
 
-        <p><label for="name">Name: </label><input type="text" id="name" name="name" autofocus></p>
-        <p><label for="surname">Surname: </label><input type="text" name="surname" id="surname"></p>
-        <p><label for="email">Email: </label><input type="text" name="email" id="email"></p>
+        <p><label for="name">Name: </label><input type="text" id="name" name="name" placeholder="Imię..." autofocus></p>
+        <p><label for="surname">Surname: </label><input type="text" name="surname" id="surname" placeholder="Nazwisko..."></p>
+        <p><label for="email">Email: </label><input type="text" name="email" id="email" placeholder="E-mail..."></p>
         <p><input type="submit" value="Dodaj"></p>
     </form>
 </main>
 
-    <a href="addvisit.html"><label>Dodaj wizytę</label></a>
-    <a href="patient.html"><label>Cofnij</label></a>
+<a href="addvisit.html"><label><h5>Dodaj wizytę</h5></label></a>
+    <a href="patient.html"><label><h5>Cofnij</h5></label></a>
 
 </body>
 </html>

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <title>Main</title>
 </head>
 <body>
 
 <header>
-    <h1>Witaj w klinice WirusPol</h1>
+    <h1>Wirtualny Recepcjonista</h1>
 </header>
 
 <br>
@@ -16,7 +17,7 @@
     <br>
 <div class="strefalekarza"><a href="doctor.html"><img src="/1.png"></a></div>
 
-
+<div th:insert="~{fragments/footer :: footer}">...</div>
 
 </body>
 </html>
