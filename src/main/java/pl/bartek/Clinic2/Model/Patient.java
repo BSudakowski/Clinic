@@ -76,6 +76,6 @@ import java.util.List;
 
     @Override
     public String toString() {
-        return id + ". " + name + " " + surname + " - " + email;
+        return name + " " + surname + " - " + email;
     }
 }

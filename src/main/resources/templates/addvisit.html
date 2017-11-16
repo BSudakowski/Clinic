@@ -13,7 +13,7 @@
 </header>
 
 <main class="visit">
-    <form action="/addvisit" method="get">
+    <form action="/addvis" method="get">
         <div th:text="${addMessage}"></div>
 
     <div>
@@ -44,6 +44,7 @@
 </form>
 </main>
 
+<a href="addvisit.html"><h5>Dodaj kolejna wizytę</h5></a>
 <a href="patient.html"><h5>Wróć</h5></a>
 
 <div th:insert="~{fragments/footer :: footer}">...</div>
