@@ -8,14 +8,14 @@ import java.util.List;
 @Entity
 public class Doctor implements Serializable {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
 
     private Long Id;
     private String name;
     private String surname;
     private String specialization;
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "doctor")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "doctor")
     private List<Visit> visits;
 
 
@@ -27,12 +27,13 @@ public class Doctor implements Serializable {
         this.surname = surname;
         this.specialization = specialization;
     }
-    public List<Visit> getVisits(){
-        return visits ;
+
+    public List<Visit> getVisits() {
+        return visits;
     }
 
-    public void setVisits(List<Visit> visits){
-        this.visits=visits;
+    public void setVisits(List<Visit> visits) {
+        this.visits = visits;
     }
 
     public Long getId() {

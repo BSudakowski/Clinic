@@ -5,30 +5,28 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-    public class Patient implements Serializable {
-        @Id
-        @GeneratedValue(strategy= GenerationType.AUTO)
+public class Patient implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 
 
+    private Long id;
+    private String name;
+    private String surname;
+    private String email;
 
-        private Long id;
-        private String name;
-        private String surname;
-        private String email;
-
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "patient")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "patient")
     private List<Visit> visits;
 
 
-
     public Patient() {
-        }
+    }
 
-        public Patient(String name, String surname, String email) {
-            this.name = name;
-            this.surname = surname;
-            this.email = email;
-        }
+    public Patient(String name, String surname, String email) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+    }
 
     public List<Visit> getVisits() {
         return visits;
@@ -39,40 +37,40 @@ import java.util.List;
     }
 
     public Patient(String name) {
-            this.name = name;
-        }
+        this.name = name;
+    }
 
-        public Long getId() {
-            return id;
-        }
+    public Long getId() {
+        return id;
+    }
 
-        public void setId(Long id) {
-            this.id = id;
-        }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-        public String getName() {
-            return name;
-        }
+    public String getName() {
+        return name;
+    }
 
-        public void setName(String name) {
-            this.name = name;
-        }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-        public String getSurname() {
-            return surname;
-        }
+    public String getSurname() {
+        return surname;
+    }
 
-        public void setSurname(String surname) {
-            this.surname = surname;
-        }
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
 
-        public String getEmail() {
-            return email;
-        }
+    public String getEmail() {
+        return email;
+    }
 
-        public void setEmail(String email) {
-            this.email = email;
-        }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     @Override
     public String toString() {
